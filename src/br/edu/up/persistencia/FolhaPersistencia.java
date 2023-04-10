@@ -11,7 +11,7 @@ public class FolhaPersistencia {
     public static Folha buscarFolha(Folha folha) {
         for (Folha itemFolha : folhas
         ) {
-            if (itemFolha.getNome() == folha.getNome()
+            if (itemFolha.getNome().equals(folha.getNome())
                     && itemFolha.getMes() == folha.getMes()
                     && itemFolha.getAno() == folha.getAno()) {
                 return itemFolha;
@@ -21,11 +21,13 @@ public class FolhaPersistencia {
     public static void incluirFolha(Folha folha) {
         folhas.add(folha);
     }
-    public static void listarFolha(Folha folha) {
+    public static Folha listarFolha(Folha folha) {
         for (Folha itemFolha:folhas
              ) {
-
-        }
+            if(itemFolha.getMes() == folha.getMes() && itemFolha.getAno() == folha.getAno()) {
+                return itemFolha;
+            }
+        } return null;
     }
 
 }
